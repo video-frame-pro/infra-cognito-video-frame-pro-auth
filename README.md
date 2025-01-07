@@ -1,19 +1,17 @@
-# infra-video-frame-pro-cognito-auth
+# infra-cognito-video-frame-pro-auth
 
-Este repositório configura o serviço de autenticação utilizando o **Amazon Cognito**. Ele gerencia a criação de pools de usuários, permissões e autenticação para o sistema de vídeo, garantindo segurança e controle de acesso.
+Este repositório é responsável pela configuração do **Amazon Cognito** para autenticação de usuários no sistema. Ele cria o **User Pool** e as configurações necessárias para gerenciar o registro e login de usuários, além de gerar os tokens JWT para a autenticação das APIs.
 
-## Função
-- Configuração do **Cognito User Pool** e **Identity Pool** para autenticação e autorização de usuários.
+## Funções
+- Criar o **User Pool** do Cognito para gerenciar os usuários.
+- Configurar as políticas de segurança e autenticação.
+- Integrar o **Cognito** com o **API Gateway** para autenticação via JWT.
 
 ## Tecnologias
-- Terraform
 - AWS Cognito
+- CloudFormation/Terraform (dependendo da sua escolha)
 
-## Estrutura de Pastas
-```plaintext
-infra-video-frame-pro-cognito-auth/
-├── terraform/
-│   ├── main.tf           # Definições do Cognito User Pool
-│   ├── variables.tf      # Variáveis de configuração do Terraform
-│   └── outputs.tf        # Outputs do Terraform
-└── README.md             # Descrição do repositório
+## Como usar
+1. Configure o ambiente com os parâmetros necessários (ex: domínio, email, etc).
+2. Execute os scripts para provisionar o User Pool do Cognito.
+3. Integre com o **API Gateway** para validação de autenticação.
