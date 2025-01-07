@@ -43,6 +43,9 @@ resource "aws_cognito_user_pool_client" "video_frame_pro_pool_client" {
 
   # Fluxos de autenticação permitidos
   explicit_auth_flows = ["ALLOW_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
+
+  # URLs de callback fictícias
+  callback_urls = ["https://fiap-video-frame-pro.com/callback"]
 }
 
 # Criando o Identity Pool do Cognito para integrar com outros serviços da AWS
