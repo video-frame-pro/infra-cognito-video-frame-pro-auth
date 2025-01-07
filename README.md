@@ -2,9 +2,6 @@
   <img src="https://i.ibb.co/zs1zcs3/Video-Frame.png" width="30%" />
 </p>
 
-
-# infra-cognito-video-frame-pro-auth
-
 Este repositório é responsável pela configuração do **Amazon Cognito** para autenticação de usuários no sistema. Ele cria o **User Pool** e as configurações necessárias para gerenciar o registro e login de usuários, além de gerar os tokens JWT para a autenticação das APIs.
 
 ## Funções
