@@ -10,7 +10,7 @@ Este repositório é responsável pela configuração do **Amazon Cognito** para
 ## Funções
 - Criar o **User Pool** do Cognito para gerenciar os usuários.
 - Configurar as políticas de segurança e autenticação.
-- Integrar o **Cognito** com o **API Gateway** para autenticação via JWT.
+- Integrar o **Cognito** com o **API Gateway** para autenticação via JWT. 
 
 ## Tecnologias
 - AWS Cognito
