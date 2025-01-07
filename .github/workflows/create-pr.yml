@@ -23,7 +23,6 @@ jobs:
         run: terraform validate
 
       - name: Fetch and Checkout Branches
-        if: ${{ success() }}
         run: |
           git fetch origin
           git checkout develop
@@ -31,7 +30,6 @@ jobs:
           git fetch origin ${{ github.event.pull_request.head.ref }}:${{ github.event.pull_request.head.ref }}
 
       - name: Merge PR to Develop
-        if: ${{ success() }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -41,7 +39,6 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Create or Update Pull Request to Main
-        if: ${{ success() }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.PAT }}
