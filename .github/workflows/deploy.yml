@@ -10,12 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install ntpdate
-        run: sudo apt-get update && sudo apt-get install -y ntpdate
-
-      - name: Sync system time
-        run: sudo ntpdate -qg  # Sincroniza o relógio com servidores NTP
-
       - name: Checkout repository
         uses: actions/checkout@v2
 
