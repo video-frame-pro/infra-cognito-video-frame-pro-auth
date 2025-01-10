@@ -15,13 +15,13 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   # Atributos de alias (a forma como os usuários se identificam)
   alias_attributes         = ["email"]
 
-  # Política de senha: mínimo de 8 caracteres, com letras maiúsculas, minúsculas, números e símbolos
+  # Política de senha: mínimo de 8 caracteres
   password_policy {
     minimum_length    = 8
-    require_uppercase = true
-    require_lowercase = true
-    require_numbers   = true
-    require_symbols   = true
+    require_uppercase = false
+    require_lowercase = false
+    require_numbers   = false
+    require_symbols   = false
   }
 
   # Tags associadas ao User Pool
