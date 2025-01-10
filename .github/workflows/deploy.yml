@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Sync system time
-        run: sudo ntpd -qg  # Sincroniza o relógio com servidores NTP
+        run: sudo ntpdate -qg  # Sincroniza o relógio com servidores NTP
 
       - name: Checkout repository
         uses: actions/checkout@v2
