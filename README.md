@@ -8,6 +8,8 @@
 
 Este repositório contém a infraestrutura necessária para configurar a autenticação de usuários no sistema de **gerenciamento de vídeos** utilizando o **Amazon Cognito**. Ele cria o **User Pool** para registro e login dos usuários, configura o **App Client** e o **Identity Pool** para integração com outros serviços da AWS.
 
+---
+
 ## Funções
 
 Este projeto tem como objetivo criar os seguintes recursos:
@@ -16,7 +18,6 @@ Este projeto tem como objetivo criar os seguintes recursos:
 2. **App Client**: Para permitir a autenticação de usuários via **email** e **senha**.
 3. **Identity Pool**: Para integrar com outros serviços AWS que exigem autenticação.
 
----
 
 ## Tecnologias
 
@@ -26,7 +27,6 @@ Este projeto tem como objetivo criar os seguintes recursos:
   <img src="https://img.shields.io/badge/Terraform-7B42BC?logo=terraform&logoColor=white" alt="Terraform" />
 </p>
 
----
 
 ## Estrutura do Repositório
 
@@ -38,7 +38,6 @@ Este projeto tem como objetivo criar os seguintes recursos:
 ├── terraform.tfvars             # Arquivo com variáveis de ambiente
 ```
 
----
 
 ## Como Funciona
 
@@ -56,7 +55,6 @@ Este repositório define e provisiona os seguintes recursos na AWS:
 3. **Identity Pool**:
     - Criado para permitir que usuários autenticados do **User Pool** acessem outros serviços AWS.
     - Integração entre o **User Pool** e o **Identity Pool** para autenticação de usuários.
-
 
 
 ## Passos para Configuração
