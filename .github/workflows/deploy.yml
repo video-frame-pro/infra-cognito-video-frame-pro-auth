@@ -16,6 +16,9 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
 
+      - name: Sync system time
+        run: sudo ntpd -qg  # Sincroniza o relógio com servidores NTP
+
       - name: Terraform Init
         run: terraform init
         working-directory: ./infra
