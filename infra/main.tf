@@ -6,19 +6,19 @@ provider "aws" {
 resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   name = var.user_pool_name
 
-  # Definindo email como um dos atributos de login, mas garantindo que seja único
-  username_attributes = ["email"]  # O login será feito pelo email
+  # Usar o username como o atributo principal para login
+  username_attributes = ["preferred_username"]  # Atributo principal (username)
 
-  # Definindo que o username será um alias do email, mas deve ser único
-  alias_attributes = ["preferred_username"]
+  # Permitir login com email como alias (não como o principal)
+  alias_attributes = ["email"]  # Email será tratado como alias
 
-  # Verificar automaticamente o email
+  # Verificar automaticamente o email, mas não tornar obrigatório
   auto_verified_attributes = ["email"]
 
   # Configuração de MFA (Multi-Factor Authentication)
   mfa_configuration = "OFF"
 
-  # Política de senha
+  # Política de senha: mínimo de 6 caracteres
   password_policy {
     minimum_length    = 6
     require_uppercase = false
