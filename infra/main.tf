@@ -6,9 +6,6 @@ provider "aws" {
 resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   name = var.user_pool_name
 
-  # Usar o username como o atributo principal para login
-  username_attributes = ["preferred_username"]  # Atributo principal (username)
-
   # Permitir login com email como alias (não como o principal)
   alias_attributes = ["email"]  # Email será tratado como alias
 
