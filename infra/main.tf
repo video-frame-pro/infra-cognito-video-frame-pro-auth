@@ -9,15 +9,18 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   # Permitir login com email e username (através de preferred_username)
   alias_attributes = ["email", "preferred_username"]
 
-  # Não requer confirmação de email (nenhuma verificação necessária)
-  auto_verified_attributes = []
+  # Usar o username como o atributo principal para login
+  username_attributes = ["preferred_username"]
+
+  # Verificar automaticamente o email, mas não tornar obrigatório
+  auto_verified_attributes = ["email"]
 
   # Configuração de MFA (Multi-Factor Authentication)
   mfa_configuration        = "OFF"
 
   # Política de senha: mínimo de 8 caracteres
   password_policy {
-    minimum_length    = 8
+    minimum_length    = 6
     require_uppercase = false
     require_lowercase = false
     require_numbers   = false
