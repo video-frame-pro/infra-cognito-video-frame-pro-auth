@@ -7,13 +7,13 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   name = var.user_pool_name
 
   # Atributos que serão verificados automaticamente
-  auto_verified_attributes = ["email"]
+  auto_verified_attributes = []
 
   # Configuração de MFA (Multi-Factor Authentication)
   mfa_configuration        = "OFF"
 
   # Atributos de alias (a forma como os usuários se identificam)
-  alias_attributes         = ["email"]
+  alias_attributes         = ["username","email"]
 
   # Política de senha: mínimo de 8 caracteres
   password_policy {
