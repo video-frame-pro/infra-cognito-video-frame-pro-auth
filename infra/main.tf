@@ -34,7 +34,7 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
 resource "aws_cognito_user_pool_client" "video_frame_pro_pool_client" {
   name               = "video-frame-pro-client"
   user_pool_id       = aws_cognito_user_pool.video_frame_pro_pool.id
-  generate_secret    = true
+  generate_secret    = false  # Não gerar o client secret
 
   # Configurações de OAuth para autenticação
   allowed_oauth_flows      = ["code"]
