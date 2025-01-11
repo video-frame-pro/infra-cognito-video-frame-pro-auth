@@ -20,7 +20,7 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
 
   # Política de senha: mínimo de 8 caracteres
   password_policy {
-    minimum_length    = 8
+    minimum_length    = 6
     require_uppercase = false
     require_lowercase = false
     require_numbers   = false
