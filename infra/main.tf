@@ -6,13 +6,14 @@ provider "aws" {
 resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   name = var.user_pool_name
 
-  # Permitir login apenas com username
+  # Permitir login com email e username (através de preferred_username)
+  alias_attributes = ["email", "preferred_username"]
+
+  # Usar o username como o atributo principal para login
   username_attributes = ["preferred_username"]
 
-  # Atributos adicionais do usuário, como email, podem ser registrados, mas não serão usados para login
-  alias_attributes = ["email"]
-
-  auto_verified_attributes = []  # Permite que o email seja verificado automaticamente
+  # Verificar automaticamente o email, mas não tornar obrigatório
+  auto_verified_attributes = ["email"]
 
   # Configuração de MFA (Multi-Factor Authentication)
   mfa_configuration        = "OFF"
