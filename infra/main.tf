@@ -9,9 +9,6 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   # Permitir login com email e username (através de preferred_username)
   alias_attributes = ["email", "preferred_username"]
 
-  # Usar email como atributo principal de login
-  username_attributes = ["email"]
-
   # Não requer confirmação de email (nenhuma verificação necessária)
   auto_verified_attributes = []
 
