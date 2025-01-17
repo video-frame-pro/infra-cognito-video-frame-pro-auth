@@ -7,10 +7,10 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   name = var.user_pool_name
 
   # Permitir login com email como alias (não como o principal)
-  alias_attributes = ["email"]  # Email será tratado como alias
+  # alias_attributes = ["email"]  # Email será tratado como alias
 
   # Verificar automaticamente o email, mas não tornar obrigatório
-  auto_verified_attributes = ["email"]
+  # auto_verified_attributes = ["email"]
 
   # Configuração de MFA (Multi-Factor Authentication)
   mfa_configuration = "OFF"
@@ -26,7 +26,8 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
 
   # Tags associadas ao User Pool
   tags = {
-    Name = "video-frame-pro-user-pool"
+    Name        = "video-frame-pro-client"
+    Environment = var.environment
   }
 }
 
@@ -38,7 +39,7 @@ resource "aws_cognito_user_pool_client" "video_frame_pro_pool_client" {
 
   # Configurações de OAuth para autenticação
   allowed_oauth_flows      = ["code"]
-  allowed_oauth_scopes     = ["email", "openid"]
+  allowed_oauth_scopes = ["email", "openid", "profile"]
   supported_identity_providers = ["COGNITO"]
 
   # Fluxos de autenticação permitidos
@@ -46,6 +47,7 @@ resource "aws_cognito_user_pool_client" "video_frame_pro_pool_client" {
 
   # URLs de callback fictícias
   callback_urls = ["https://fiap-video-frame-pro.com/callback"]
+
 }
 
 # Criando o Identity Pool do Cognito para integrar com outros serviços da AWS
