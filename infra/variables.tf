@@ -11,3 +11,9 @@ variable "user_pool_name" {
   type        = string
   default     = "video-frame-pro-user-pool"
 }
+
+variable "environment" {
+  description = "Ambiente (prod)"
+  type        = string
+  default     = "prod"
+}
