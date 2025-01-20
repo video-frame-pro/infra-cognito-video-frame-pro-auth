@@ -7,10 +7,10 @@ resource "aws_cognito_user_pool" "video_frame_pro_pool" {
   name = var.user_pool_name
 
   # Permitir login com email como alias (não como o principal)
-  # alias_attributes = ["email"]  # Email será tratado como alias
+  alias_attributes = ["email"]  # Email será tratado como alias
 
   # Verificar automaticamente o email, mas não tornar obrigatório
-  # auto_verified_attributes = ["email"]
+  auto_verified_attributes = ["email"]
 
   # Configuração de MFA (Multi-Factor Authentication)
   mfa_configuration = "OFF"
